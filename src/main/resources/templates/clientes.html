@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/material-icons/iconfont/material-icons.css}"	rel="stylesheet">
+        <link rel="stylesheet"	th:href="@{/materialize-css/dist/css/materialize.min.css}">
+        <script	th:src="@{/materialize-css/dist/js/materialize.min.js}"></script>
+        <title>Page-Clientes</title>
+    </head>
+    <body>
+        <div th:replace="fragments/navegador :: navegador"></div>
+        <div class="row">
+            <div class="col s12">
+                <p th:text="${nome}" class="center"></p>
+                <div class="col s12 l10 push-l1">
+                    <table class="centered responsive-table">
+                        <thead>
+                            <tr>
+
+                                <th>Data</th>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Email</th>
+                                <th>Cep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="cls : ${clientes}">
+                                <td th:text="${cls.data}"></td>
+                                <td th:text="${cls.nome}"></td>
+                                <td th:text="${cls.telefone}"></td>
+                                <td th:text="${cls.email}"></td>
+                                <td th:text="${cls.cep}"></td>
+                                <td><a class="btn-floating btn-small red" onclick="deletar(event)" th:href="@{/deletar/{id}(id=${cls.id})}"><i class="material-icons">clear</i></a></td>
+                                <td><a class="btn-floating btn-small blue" onclick="editar(event)" th:href="@{/editar/{id}(id=${cls.id})}"><i class="material-icons">edit</i></a></td>
+                                <td><a class="btn-floating btn-small orange" th:href="@{/sobre/{nome}(nome=${cls.nome})}"><i class="material-icons">scan</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+</html>

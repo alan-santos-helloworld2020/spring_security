@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Onload-Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/material-icons/iconfont/material-icons.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/materialize-css/dist/css/materialize.min.css}" rel="stylesheet" type="text/css"/>
+        <script th:src="@{/materialize-css/dist/js/materialize.min.js}" type="text/javascript"></script>
+        <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="row" style="margin-top:10vh">
+            <p class="center"><b>Formulário de Login</b></p>
+            <div class="col s12 l8 push-l2">
+                
+                <form th:action="@{/login}" method="post">
+                    
+                    <div class="input-field col s12 l12">
+                        <i class="material-icons prefix">login</i>
+                        <input type="text" name="username"/>
+                        <label> User Name: </label> 
+                    </div>
+                    
+                    <div class="input-field col s12 l12">
+                        <i class="material-icons prefix">password</i>
+                        <input type="password" name="password"/>
+                        <label> Password: </label> 
+                    </div>
+                    
+                    <div class="col s12">
+                        <button class="btn red right" type="submit">logar<i class="material-icons right">send</i></button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+       
+        <div th:replace="fragments/rodape :: rodape"></div>
+        <script th:src="@{/js/script.js}" type="text/javascript"></script>
+    </body>
+</html>

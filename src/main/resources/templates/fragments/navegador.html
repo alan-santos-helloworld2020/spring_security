@@ -1,0 +1,28 @@
+<header th:fragment="navegador">
+    <nav class="black">
+        <div class="nav-wrapper">
+
+            <a href="#!" class="brand-logo center">cadastro</a> <a href="#"
+                                                                   data-target="mobile-demo" class="sidenav-trigger"><i
+                    class="material-icons">menu</i></a>
+
+            <ul class="right hide-on-med-and-down">
+                <li><a class="navbar-brand" th:href="@{/}">Home<i class="material-icons left">house</i></a></li>
+                <li><a class="navbar-brand" th:href="@{/cadastro}">Cadastro<i class="material-icons left">edit</i></a></li>
+                <li><a class="navbar-brand" th:href="@{/clientes}">Clientes<i class="material-icons left">bookmark_add</i></a></li>
+                <li><a class="navbar-brand" th:href="@{/sobre}">Sobre<i class="material-icons left">person</i></a></li>
+                <li><a class="navbar-brand" th:href="@{/logout}"><i class="material-icons left">logout</i></a></li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a class="navbar-brand" th:href="@{/}">Home<i class="material-icons left">house</i></a></li>
+        <li><a class="navbar-brand" th:href="@{/cadastro}">Cadastro<i class="material-icons left">edit</i></a></li>
+        <li><a class="navbar-brand" th:href="@{/clientes}">Clientes<i class="material-icons left">bookmark_add</i></a></li>
+        <li><a class="navbar-brand" th:href="@{/sobre}">Sobre<i class="material-icons left">person</i></a></li>
+        <li><a class="navbar-brand" th:href="@{/logout}"><i class="material-icons left">logout</i></a></li>
+    </ul>
+</header>
